@@ -1,0 +1,16 @@
+.related-block {
+	overflow: hidden;
+	.related-heading {
+		margin-top: 40px;
+		@extend %s-title;
+	}
+}
+@media screen and (max-width: $tablet) {
+	.related-block {
+		.project-item {
+			&:nth-child(3) {
+				display: none;
+			}
+		}
+	}
+}

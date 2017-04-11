@@ -1,0 +1,156 @@
+.post-columns + .milestones-list-holder {
+	.milestones-list {
+		margin-top: 0;
+	}
+}
+.milestones-list-holder {
+	position: relative;
+	&:before {
+		content: '';
+		background-image: url('images/bg-milestones.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -300px;
+		bottom: -300px;
+		opacity: .5;
+	}
+	.milestones-list {
+		margin: 40px -9999px 40px;
+		padding: 20px 9999px;
+		overflow: hidden;
+		position: relative;
+		background: #121822;
+		color: $pageColor;
+		opacity: .9;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 20px;
+			bottom: 20px;
+			left: 50%;
+			margin-left: -.5px;
+			width: 1px;
+			background: $pageColor;
+		}
+		.milestone-item {
+			max-width: 300px;
+			clear: both;
+			padding: 20px 0;
+			background: inherit;
+			position: relative;
+			z-index: 1;
+			&:before {
+				content: '';
+				position: absolute;
+				width: 15px;
+				height: 1px;
+				top: 50%;
+				margin-top: -.5px;
+				background: $pageColor;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				width: 5px;
+				height: 5px;
+				top: 50%;
+				margin-top: -2.5px;
+				border: 1px solid $pageColor;
+				border-radius: 100%;
+				box-sizing: border-box;
+			}
+			&:nth-child(1n) {
+				text-align: left;
+				float: right;
+				&:before {
+					left: -35px;
+				}
+				&:after {
+					left: -20px;
+				}
+			}
+			&:nth-child(2n) {
+				text-align: right;
+				float: left;
+				&:before {
+					left: auto;
+					right: -34px;
+				}
+				&:after {
+					left: auto;
+					right: -19px;
+				}
+			}
+			&:first-child {
+				text-align: center;
+				margin: 0 auto;
+				float: none;
+				&:before {
+					display: none;
+				}
+				&:after {
+					left: 50%;
+					margin-left: -2.5px;
+					top: auto;
+					margin-top: 0;
+					bottom: 0;
+				}
+			}
+			&:last-child {
+				text-align: center;
+				float: none;
+				margin: 0 auto;
+				&:before {
+					display: none;
+				}
+				&:after {
+					left: 50%;
+					margin-left: -2.5px;
+					top: 0;
+					margin-top: 0;
+				}
+			}
+			.milestone-title {
+				font-weight: bold;
+				color: $brandOrange;
+				+ .post {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $tablet) {
+	.milestones-list-holder {
+		.milestones-list {
+			&:before {
+				display: none;
+			}
+			.milestone-item {
+				float: none !important;
+				width: 100%;
+				text-align: left !important;
+				margin: 0 auto;
+				&:before {
+					display: none;
+				}
+				&:after {
+					top: 0 !important;
+					left: 0 !important;
+					right: auto !important;
+					margin: 0;
+					bottom: auto !important;
+				}
+				&:first-child {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

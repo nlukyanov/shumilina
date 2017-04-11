@@ -1,0 +1,40 @@
+.messages-list {
+	.message-item {
+		margin: 0 -40px;
+		padding: 20px 40px;
+		&:nth-child(2n) {
+			background: rgba(198,198,198,.25);
+		}
+		.message-title {
+			font-weight: 600;
+			line-height: 1.5;
+			margin-bottom: 10px;
+			span {
+				font-weight: 400;
+				color: #aaa;
+			}
+		}
+		.message-date {
+			color: #aaa;
+			font-size: 12px;
+			margin-bottom: 20px;
+		}
+		.message-content {
+			margin-bottom: 20px;
+		}
+		.message-action {
+			overflow: hidden;
+			.form {
+				max-width: 100%;
+				width: auto;
+				float: right;
+				margin-left: 10px;
+				.btn {
+					float: right;
+					font-size: 12px;
+					text-transform: none;
+				}
+			}
+		}
+	}
+}

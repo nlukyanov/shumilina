@@ -1,0 +1,162 @@
+.back-to-top {
+	position: fixed;
+	right: 40px;
+	bottom: 17px;
+	text-decoration: none;
+	z-index: 99999;
+	display: none;
+	svg {
+		fill: $white;
+	}
+	&:hover,
+	&:focus {
+		svg {
+			fill: $brandOrange;
+		}
+		span {
+			visibility: visible;
+		}
+	}
+	span {
+		color: $brandOrange;
+		display: block;
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 300;
+		margin-top: 5px;
+		font-size: 12px;
+		visibility: hidden;
+	}
+}
+footer {
+	max-width: $pageWidth;
+	margin: 0 auto;
+	color: $white;
+	overflow: hidden;
+	font-size: 12px;
+	padding: 20px 0;
+	font-weight: 300;
+	.copy {
+		float: left;
+	}
+	.footer-nav {
+		float: right;
+		li {
+			float: left;
+			&:before {
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				width: 1px;
+				height: 12px;
+				background: $white;
+				margin: 0 10px;
+			}
+			&:first-child {
+				&:before {
+					display: none;
+				}
+			}
+			a {
+				color: $white;
+				text-decoration: none;
+				&:hover {
+					color: $brandOrange;
+				}
+			}
+			&.current-menu-item {
+				a {
+					color: $brandOrange;
+				}
+			}
+		}
+	}
+}
+.home {
+	footer {
+		.footer-nav {
+			li {
+				&.current-menu-item {
+					&.menu-item-type-post_type {
+						a {
+							color: $white;
+							&:hover {
+								color: $brandOrange;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: $tablet) {
+	footer {
+		font-size: 14px;
+		max-width: 100%;
+		.copy {
+			display: none;
+		}
+		.footer-nav {
+			float: none;
+			width: 100%;
+			text-transform: uppercase;
+			font-size: 16px;
+			li {
+				float: none;
+				&:before {
+					display: none;
+				}
+				a {
+					display: block;
+					padding: 10px 20px;
+					background: $brandBlue;
+					margin-top: 2px;
+					&:hover {
+						color: $white;
+						background: $brandOrange;
+					}
+				}
+				&.current-menu-item {
+					a {
+						color: $white;
+						background: $brandOrange;
+					}
+				}
+			}
+		}
+	}
+	.home {
+		footer {
+			.footer-nav {
+				li {
+					&.current-menu-item {
+						&.menu-item-type-post_type {
+							a {
+								background: $brandBlue;
+								color: $white;
+								&:hover {
+									color: $brandOrange;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.back-to-top {
+		position: static;
+		text-align: center;
+		margin: 0 0 20px;
+		display: block !important;
+		svg {
+			fill: $white !important;
+		}
+		span {
+			visibility: visible !important;
+			font-size: 14px;
+			color: $white;
+		}
+	}
+}

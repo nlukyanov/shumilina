@@ -1,0 +1,14 @@
+{
+  "name": "shumilina",
+  "version": "0.0.1",
+  "author": "Mykola Lukianov",
+
+  "dependencies": {
+    "gulp": "*",
+    "gulp-sass": "*",
+    "gulp-concat": "*",
+    "gulp-uglify": "*",
+    "gulp-livereload": "*",
+    "jquery": "*"
+  }
+}

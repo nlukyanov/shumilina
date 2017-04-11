@@ -1,0 +1,88 @@
+%s-input {
+	width: 100%;
+	box-sizing: border-box;
+	border: 1px solid $brandBlue;
+	box-shadow: none;
+	border-radius: 0;
+	outline: none;
+	font: $font;
+	padding: 10px;
+	color: $brandBlue;
+	background: $white;
+	margin: 0;
+	vertical-align: top;
+	&::-webkit-input-placeholder {
+		color: #ccc;
+		font-style: italic;
+	}
+	&::-moz-placeholder {
+		color: #ccc;
+		font-style: italic;
+	}
+	&:-ms-input-placeholder {
+		color: #ccc;
+		font-style: italic;
+	}
+	&:-moz-placeholder {
+		color: #ccc;
+		font-style: italic;
+	}
+	&:focus {
+		border-color: $brandOrange;
+	}
+}
+.form {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 300px;
+	.form-row {
+		overflow: hidden;
+		margin-bottom: 20px;
+		position: relative;
+		&.has-error {
+			input[type="text"],
+			input[type="email"],
+			input[type="password"],
+			textarea {
+				border-color: red;
+			}
+		}
+	}
+	hr {
+		border: 1px solid $brandBlue;
+		border-width: 1px 0 0;
+		margin-bottom: 20px;
+		opacity: .25;
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="password"] {
+		@extend %s-input;
+	}
+	textarea {
+		resize: none;
+		height: 100px;
+		@extend %s-input;
+	}
+	input[type="submit"] {
+		float: right;
+		border: none;
+		cursor: pointer;
+		border-radius: 0;
+		outline: 0;
+	}
+	.error {
+		color: red;
+		font-size: 12px;
+		padding-top: 5px;
+	}
+}
+@media screen and (max-width: $mobile) {
+	.g-recaptcha {
+		transform: scale(0.77);
+		-webkit-transform: scale(0.77);
+		transform-origin: 0 0;
+		-webkit-transform-origin: 0 0;
+		margin-right: -100px;
+	}
+}

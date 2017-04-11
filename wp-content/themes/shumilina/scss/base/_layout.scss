@@ -1,0 +1,130 @@
+%s-wrapper-deco {
+	content: '';
+	position: absolute;
+	bottom: 15px;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+%s-page-title-deco {
+	content: '';
+	width: 200px;
+	height: 1px;
+	background: $brandBlue;
+	position: absolute;
+	top: 50%;
+	margin-top: -.5px;
+}
+body {
+	background: url('images/bg-page.png');
+	color: $brandBlue;
+	font: $font;
+	&.isModal {
+		overflow: hidden;
+	}
+}
+.wrapper {
+	overflow: hidden;
+	.wrapper-inner {
+		background: $pageColor;
+		max-width: $pageWidth;
+		margin: 0 auto;
+		box-sizing: border-box;
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			left: 15px;
+			right: 15px;
+			bottom: 15px;
+			top: 0;
+			background: url('images/bg-wrapper.png') repeat-x 0 100%;
+		}
+		.wrapper-frame {
+			position: relative;
+			z-index: 1;
+			-webkit-box-shadow: inset 0 -5px 10px 0 rgba(0,0,0,.1);
+			box-shadow: inset 0 -5px 10px 0 rgba(0,0,0,.1);
+			.wrapper-block {
+				position: relative;
+				z-index: 1;
+				&:before {
+					background-image: url('images/deco-wrapper01.png');
+					left: 15px;
+					width: 155px;
+					height: 124px;
+					@extend %s-wrapper-deco;
+				}
+				&:after {
+					background-image: url('images/deco-wrapper02.png');
+					right: 35px;
+					bottom: 25px;
+					width: 100px;
+					height: 37px;
+					@extend %s-wrapper-deco;
+				}
+				.page {
+					min-height: 400px;
+					padding: 0 40px 140px;
+				}
+			}
+		}
+	}
+	.link-holder {
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+.page-title {
+	text-align: center;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+	overflow: hidden;
+	span {
+		position: relative;
+		&:before {
+			right: 100%;
+			margin-right: 20px;
+			@extend %s-page-title-deco;
+		}
+		&:after {
+			left: 100%;
+			margin-left: 20px;
+			@extend %s-page-title-deco;
+		}
+	}
+}
+.message {
+	text-align: center;
+	font-size: 18px;
+	font-style: italic;
+	color: $brandOrange;
+	max-width: 500px;
+	margin: 0 auto;
+	line-height: 1.5;
+}
+@media screen and (max-width: $tablet) {
+	body {
+		font-size: 16px;
+		line-height: 20px;
+	}
+	.wrapper {
+		padding: 0 16px;
+		.wrapper-inner {
+			.wrapper-frame {
+				.wrapper-block {
+					.page {
+						padding-left: 20px;
+						padding-right: 20px;
+					}
+				}
+			}
+		}
+	}
+	.page-title,
+	.post-title {
+		span {
+			font-size: 20px;
+		}
+	}
+}

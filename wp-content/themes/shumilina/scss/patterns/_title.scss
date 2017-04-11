@@ -1,0 +1,25 @@
+%s-title {
+	overflow: hidden;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-bottom: 40px;
+	span {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		max-width: 400px;
+		&:before {
+			left: 0;
+			transform: translateX(-100%);
+			margin-left: -20px;
+			@extend %s-post-title-deco;
+		}
+		&:after {
+			right: 0;
+			transform: translateX(100%);
+			margin-right: -20px;
+			@extend %s-post-title-deco;
+		}
+	}
+}
