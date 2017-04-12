@@ -526,22 +526,25 @@
 	}
 
 	// Template redirects
-	add_action('template_redirect', function() {
-		if (strpos($_SERVER['REQUEST_URI'], 'message-sent')) {
+	add_filter( 'template_include', 'my_callback' );
+
+	function my_callback( $original_template ) {
+		if ( strpos($_SERVER['REQUEST_URI'], 'message-sent') ) {
 			global $wp_query;
 			$wp_query->is_404 = false;
 			status_header(200);
-			include(TEMPLATEPATH . '/message-sent.php');
-			exit();
+			return TEMPLATEPATH . '/message-sent.php';
 		}
-		if (strpos($_SERVER['REQUEST_URI'], 'messages')) {
+		else if ( strpos($_SERVER['REQUEST_URI'], 'messages') ) {
 			global $wp_query;
 			$wp_query->is_404 = false;
 			status_header(200);
-			include(TEMPLATEPATH . '/messages.php');
-			exit();
+			return TEMPLATEPATH . '/messages.php';
 		}
-	});
+		else {
+			return $original_template;
+		}
+	}
 
 	// Registering custom post statuses
 	add_action( 'init', 'status_unread' );

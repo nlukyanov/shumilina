@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-	<title><?php bloginfo('title'); ?><?php wp_title(' | '); ?></title>
+	<?php if ( strpos($_SERVER['REQUEST_URI'], 'message-sent') ) : ?>
+		<title><?= 'Сообщениe отправлено | ' . get_bloginfo('title'); ?></title>
+	<?php elseif ( strpos($_SERVER['REQUEST_URI'], 'messages') ) :  ?>
+		<title><?= 'Сообщения | ' . get_bloginfo('title'); ?></title>
+	<?php else : ?>
+		<title><?php wp_title(); ?></title>
+	<?php endif; ?>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">

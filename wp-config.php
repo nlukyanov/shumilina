@@ -29,7 +29,7 @@ define('DB_USER', 'shumilina');
 define('DB_PASSWORD', 'poweredup');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '37.59.11.5:3306');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');

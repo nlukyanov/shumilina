@@ -4,11 +4,11 @@
 	<?php while ( have_posts() ) : the_post(); ?>
 		<ul id="breadcrumbs" class="breadcrumbs">
 			<li class="item-home">
-				<a class="bread-link bread-home" href="http://shumilina.local" title="Главная">Главная</a>
+				<a class="bread-link bread-home" href="http://shumilina.design/" title="Главная">Главная</a>
 			</li>
 			<li class="separator separator-home"> • </li>
 			<li class="item-cat item-custom-post-type-blog">
-				<a class="bread-cat bread-custom-post-type-blog" href="http://shumilina.local/blog/" title="Блог">Блог</a>
+				<a class="bread-cat bread-custom-post-type-blog" href="http://shumilina.design/blog/" title="Блог">Блог</a>
 			</li>
 			<li class="separator"> • </li>
 			<li class="item-current item-45">
